@@ -1,0 +1,319 @@
+* {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+body {
+  opacity: 1;
+  background-image: url(../img/background.png);
+  background-size: auto 150%;
+  background-repeat: no-repeat;
+  background-position: left top;
+  color: white;
+  font-size: 18px;
+  font-family: "Montserrat", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+.title {
+  font-size: 36px;
+  width: 90%;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  position: relative;
+  text-align: center;
+  margin-top: 8vw;
+  font-weight: 600;
+}
+.subtitle {
+  font-size: 24px;
+  display: block;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  margin-top: 3vw;
+  font-weight: 600;
+}
+
+ul{
+  color: #000;
+  font-size: 16px;
+}
+.form__input,
+.tel,
+select {
+  display: block;
+  width: 100%;
+  color: #000;
+  background-color: white;
+  border: 0 none;
+  height: 56px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 5px;
+  margin: 15px 0;
+}
+.form {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  display: block;
+  max-width: 560px;
+  font-size: 18px;
+  font-weight: 500;
+}
+.div{
+  margin: 15px 0;
+}
+/* Removes the clear button from date inputs */
+input[type="date"]::-webkit-clear-button {
+  display: none;
+}
+
+/* Removes the spin button */
+input[type="date"]::-webkit-inner-spin-button { 
+  display: none;
+}
+
+/* Always display the drop down caret */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: #000000;
+}
+
+/* A few custom styles for date inputs */
+input[type="date"] {
+  appearance: none;  
+  -webkit-appearance: none;
+  color: #000;
+  font-size: 18px;
+  border: 0 none;
+  background:#ecf0f1;
+  padding: 0 20px;
+  margin: 15px 0;
+  width: 100%;
+  height: 56px;
+  line-height: 56px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  display: block !important;
+  visibility: visible !important;
+}
+
+input[type="date"], focus {
+  color: #000;
+  box-shadow: none;
+  border: 0 none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+}
+.smalltext {
+  font-size: 16px;
+  font-weight: 400;
+}
+label {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 300;
+  margin: 10px 0;
+}
+
+/* Hide original inputs */
+input[type="checkbox"],
+input[type="radio"] {
+  display: none;
+}
+/* Checkboxes */
+input[type="checkbox"] + label span {
+  border: 1px solid #fff;
+  font-size: 20px;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+  margin: 4px 8px 8px 8px;
+  padding: 2px;
+  text-align: center;
+  vertical-align: middle;
+}
+input[type="checkbox"]:checked + label span::after {
+  content: url(../img/galka.png);
+  top: -3px;
+  position: relative;
+  left: -2px;
+}
+/* Radio buttons */
+input[type="radio"] + label span {
+  border: 1px solid #fff;
+  border-radius: 50%;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  line-height: 0.35em;
+  margin: 4px 8px 8px 8px;
+  padding: 2px;
+  text-align: center;
+  vertical-align: middle;
+}
+input[type="radio"]:checked + label span {
+  background-color: whitesmoke;
+}
+.number {
+  display: block;
+  position: relative;
+  width: 70px;
+  margin: 15px 0;
+}
+.number input[type="number"] {
+  display: block;
+  height: 56px;
+  border-radius: 7px;
+  line-height: 56px;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  text-align: center;
+  background: none;
+  position: relative;
+  left: 25px;
+  background: white;
+}
+.number input[type="number"]::-webkit-outer-spin-button,
+.number input[type="number"]::-webkit-inner-spin-button {
+  display: none;
+}
+.number-minus {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  width: 25px;
+  display: block;
+  text-align: center;
+  border: none;
+  font-size: 30px;
+  font-weight: 500;
+  color: #fff;
+  background: none;
+}
+.number-plus {
+  position: absolute;
+  top: 0px;
+  right: -50px;
+  color: #fff;
+  bottom: 0px;
+  width: 25px;
+  display: block;
+  text-align: center;
+  border: none;
+  outline: none;
+  font-size: 30px;
+  font-weight: 500;
+  background: none;
+}
+.button {
+  text-align: center;
+  height: 60px;
+  width: 100%;
+  line-height: 60px;
+  border: 0 none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  background-color: #95d0d6;
+  margin: 20px 0;
+  overflow: hidden;
+  font-family: "Montserrat", sans-serif;
+}
+.button__effect {
+  position: relative;
+  top: -60px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-85px);
+  animation: 5s linear 5s infinite anim;
+}
+@keyframes anim {
+  0% {
+    transform: translateX(-85px);
+  }
+  25% {
+    transform: translateX(625px);
+  }
+  100% {
+    transform: translateX(625px);
+  }
+}
+.button__effect_2 {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.4)
+  );
+  -webkit-transform: skewX(-45deg);
+  -ms-transform: skewX(-45deg);
+  transform: skewX(-45deg);
+  height: 100%;
+  width: 45px;
+  position: relative;
+}
+footer {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  background: black;
+  display: flex;
+  position: relative;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.footer__img {
+  width: 15%;
+  padding: 10px;
+  display: flex;
+  align-self: center;
+  margin-bottom: 20px;
+}
+.footer__rights {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 20px;
+}
+.footer__links {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.footer__social {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  border-radius: 36px;
+  background-color: white;
+}
+@media screen and (min-width: 960px) {
+  footer {
+    flex-direction: row;
+  }
+  .footer__img {
+    width: 5%;
+  }
+}

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./css/intlTelInput.css">
+  <title>Анкета</title>
+</head>
+
+<body>
+  <div class="title">Для максимально качественного оказания вам помощи, пожалуйста, внимательно заполните анкету</div>
+  <div class="subtitle"></div>
+  <form class="form" method="POST"
+    action="https://script.google.com/macros/s/AKfycbykAXbMeNILNTDdvzk8HRTcY1ClHAiDpJxv4ggjieY1NcGqGhtSbMqffL_oXW3Bi3Gx/exec">
+    <div>
+      Имя
+      <input class="form__input" name="Имя" type="text" required maxlength="20">
+    </div>
+    <div>
+      Фамилия
+      <input class="form__input" name="Фамилия" type="text" required maxlength="20">
+    </div>
+    <div>
+      Дата Рождения
+      <input type="date" name="Дата рождения"  data-date-format="YYYY-MM-DD" data-date="" min="1940-01-01" max="2021-12-31" required>
+    </div>
+    <div>
+      Ваше еврейство
+      <select class="form__input" name="Еврейство" required>
+        <option value="Мама">Мама еврейка</option>
+        <option value="Папа">Папа еврей</option>
+        <option value="Оба">Оба родителя евреи</option>
+        <option value="Есть">Есть иврейские корни</option>
+        <option value="Не еврей">Не еврей</option>
+        <option value="Хочу пройти">Хочу пройти гиюр</option>
+      </select>
+    </div>
+    <div>
+      Ваш номер телефона в настоящее время
+      <input id="phone" class="form__input" name="phone" type="number" required onchange="myFunction()">
+      <input id="phone+" style="display: none;" name="phone+" value="">
+    </div>
+    <div>
+      Номер телефона, привязанный к Whats App (если он у вас есть)
+      <input id="phonewa" class="form__input" name="phonewa" type="number" onchange="myFunction()">
+      <input id="phonewa+" style="display: none;" name="phonewa+" value="">
+    </div>
+    <div>
+      Номер телефона, привязанный к Telegram (если он у вас есть)
+      <input id="phonetg" class="form__input" name="phonetg" type="number" onchange="myFunction()">
+      <input id="phonetg+" style="display: none;" name="phonetg+" value="">
+    </div>
+    <div>
+      Email
+      <input class="form__input" name="Email" type="email" maxlength="50"
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+    </div>
+    <div>
+      Где вы проживали до начала войны?
+      <input class="form__input" type="text" name="Где были" required maxlength="25">
+    </div>
+    <div>
+      В каком городе и стране вы живете сейчас?
+      <input class="form__input" type="text" name="Где сейчас" maxlength="25" required>
+    </div>
+    <div>
+      Место проживания на данный момент
+      <div class="div">
+        <input type="radio" id="1" name="Место проживания" value="Гостиница" required>
+        <label for="1"><span></span>Гостиница</label> <br>
+        <input type="radio" id="2" name="Место проживания" value="Пересел">
+        <label for="2"><span></span>Переселенческий центр / муниципальное жилье / кибуц</label><br>
+        <input type="radio" id="3" name="Место проживания" value="Друзья">
+        <label for="3"><span></span>Друзья / родственники</label><br>
+        <input type="radio" id="4" name="Место проживания" value="Аренда <6">
+        <label for="4"><span></span>Арендная квартира краткосрочная (до 6 месяцев)</label><br>
+        <input type="radio" id="5" name="Место проживания" value="Аренда 1+">
+        <label for="5"><span></span>Арендная квартира долгосрочная (1 год+)</label><br>
+        <input type="radio" id="6" name="Место проживания" value="квартира">
+        <label for="6"><span></span>Собственная квартира</label><br>
+      </div>
+    </div>
+    <div>
+      Довольны ли вы своим местом проживания
+      <div class="div">
+        <input type="radio" id="Да" name="Довольны" value="Да" required>
+        <label for="Да"><span></span>Да, доволен</label> <br>
+        <input type="radio" id="Хотел" name="Довольны" value="Хотел бы">
+        <label for="Хотел"><span></span>Хотел бы переехать, но пока не знаю куда и как</label><br>
+        <input type="radio" id="Нет" name="Довольны" value="Нет">
+        <label for="Нет"><span></span>Нет, хотел бы переехать</label><br>
+      </div>
+    </div>
+    <div>
+      Количество членов семьи, проживающих с вами сейчас (включая вас)
+      <div class="number">
+        <button class="number-minus" type="button"
+          onclick="this.nextElementSibling.stepDown(); this.nextElementSibling.onchange();">-</button>
+        <input name="Кол-во" type="number" min="0" value="1">
+        <button class="number-plus" type="button"
+          onclick="this.previousElementSibling.stepUp(); this.previousElementSibling.onchange();">+</button>
+      </div>
+    </div>
+    <div>
+      Есть ли из них дети до 18 лет?
+      <div class="div">
+        <input type="radio" id="ДетиДа" name="Дети" value="Да" required>
+        <label for="ДетиДа"><span></span>Да</label> <br>
+        <input type="radio" id="ДетиНет" name="Дети" value="Нет">
+        <label for="ДетиНет"><span></span>Нет</label>
+      </div>
+    </div>
+    <div>
+      Сталкиваетесь ли вы с трудностями в МВД и нужна ли вам помощь?
+      <div class="div">
+        <input type="radio" id="МВДДа" name="МВД" value="Да" required>
+        <label for="МВДДа"><span></span>Да</label> <br>
+        <input type="radio" id="МВДНет" name="МВД" value="Нет">
+        <label for="МВДНет"><span></span>Нет</label>
+      </div>
+    </div>
+    <div>
+      Сталкиваетесь ли вы с трудностями в Министерстве абсорбции и нужна ли вам помощь?
+      <div class="div">
+        <input type="radio" id="М-во абсорбцииДа" name="М-во абсорбции" value="Да" required>
+        <label for="М-во абсорбцииДа"><span></span>Да</label> <br>
+        <input type="radio" id="М-во абсорбцииНет" name="М-во абсорбции" value="Нет">
+        <label for="М-во абсорбцииНет"><span></span>Нет</label>
+      </div>
+    </div>
+    <div>
+      Сталкиваетесь ли вы с трудностями с банком и нужна ли вам помощь?
+      <div class="div">
+        <input type="radio" id="БанкДа" name="Банк" value="Да" required>
+        <label for="БанкДа"><span></span>Да</label> <br>
+        <input type="radio" id="БанкНет" name="Банк" value="Нет">
+        <label for="БанкНет"><span></span>Нет</label>
+      </div>
+    </div>
+    <div>
+      Сталкиваетесь ли вы с трудностями с медицинской страховкой и нужна ли вам помощь?
+      <div class="div">
+        <input type="radio" id="МедДа" name="Мед" value="Да" required>
+        <label for="МедДа"><span></span>Да</label> <br>
+        <input type="radio" id="МедНет" name="Мед" value="Нет">
+        <label for="МедНет"><span></span>Нет</label>
+      </div>
+    </div>
+    <div>
+      Сталкиваетесь ли вы с трудностями с поиском и оформлением детей в детский сад/школу и нужна ли вам помощь?
+      <div class="div">
+        <input type="radio" id="ШколаДа" name="Школа" value="Да" required>
+        <label for="ШколаДа"><span></span>Да</label> <br>
+        <input type="radio" id="ШколаНет" name="Школа" value="Нет">
+        <label for="ШколаНет"><span></span>Нет</label>
+      </div>
+    </div>
+    <div>
+      Сталкиваетесь ли вы с трудностями в поиске продленки для детей и нужна ли вам помощь?
+      <div class="div">
+        <input type="radio" id="ПродлёнкаДа" name="Продлёнка" value="Да" required>
+        <label for="ПродлёнкаДа"><span></span>Да</label> <br>
+        <input type="radio" id="ПродлёнкаНет" name="Продлёнка" value="Нет">
+        <label for="ПродлёнкаНет"><span></span>Нет</label>
+      </div>
+    </div>
+    <div>
+      Сталкиваетесь ли вы с трудностями в поиске спортивных секций и кружков для детей и нужна ли вам помощь?
+      <div class="div">
+        <input type="radio" id="КружкиДа" name="Кружки" value="Да" required>
+        <label for="КружкиДа"><span></span>Да</label> <br>
+        <input type="radio" id=Кружки"Нет" name="Кружки" value="Нет">
+        <label for="КружкиНет"><span></span>Нет</label>
+      </div>
+    </div>
+    <div>
+      Сталкиваетесь ли вы с трудностями в поиске жилья и нужна ли вам помощь?
+      <div class="div">
+        <input type="radio" id="ЖильёДа" name="Жильё" value="Да" required>
+        <label for="ЖильёДа"><span></span>Да</label> <br>
+        <input type="radio" id="ЖильёНет" name="Жильё" value="Нет">
+        <label for="ЖильёНет"><span></span>Нет</label>
+      </div>
+    </div>
+    <div>
+      Сталкиваетесь ли вы с трудностями в юридическом сопровождении сделки аренды или покупки жилья и нужна ли вам
+      помощь?
+      <div class="div">
+        <input type="radio" id="ЮридДа" name="Юрид" value="Да" required>
+        <label for="ЮридДа"><span></span>Да</label> <br>
+        <input type="radio" id="ЮридНет" name="Юрид" value="Нет">
+        <label for="ЮридНет"><span></span>Нет</label>
+      </div>
+    </div>
+    <div>
+      Сталкиваетесь ли вы с трудностями в поиске поручителей или гарантов и нужна ли вам помощь?
+      <div class="div">
+        <input type="radio" id="ГарантыДа" name="Гаранты" value="Да" required>
+        <label for="ГарантыДа"><span></span>Да</label> <br>
+        <input type="radio" id="ГарантыНет" name="Гаранты" value="Нет">
+        <label for="ГарантыНет"><span></span>Нет</label>
+      </div>
+    </div>
+    <div>
+      Сталкиваетесь ли вы с трудностями в поиске получении грантов от благотворительных фондов и нужна ли вам помощь?
+      <div class="div">
+        <input type="radio" id="ГрантыДа" name="Гранты" value="Да" required>
+        <label for="ГрантыДа"><span></span>Да</label> <br>
+        <input type="radio" id="ГрантыНет" name="Гранты" value="Нет">
+        <label for="ГрантыНет"><span></span>Нет</label>
+      </div>
+    </div>
+    <div>
+      Сталкиваетесь ли вы с трудностями в получении гуманитарной помощи и нужна ли вам помощь?
+      <div class="div">
+        <input type="radio" id="Гуманитарная помощьДа" name="Гуманитарная помощь" value="Да" required>
+        <label for="Гуманитарная помощьДа"><span></span>Да</label> <br>
+        <input type="radio" id="Гуманитарная помощьНет" name="Гуманитарная помощь" value="Нет">
+        <label for="Гуманитарная помощьНет"><span></span>Нет</label>
+      </div>
+    </div>
+    <div>
+      Сталкиваетесь ли вы с трудностями с легализацией ваших денег в Израиле и нужна ли вам помощь?
+      <div class="div">
+        <input type="radio" id="Легализация денегДа" name="Легализация денег" value="Да" required>
+        <label for="Легализация денегДа"><span></span>Да</label> <br>
+        <input type="radio" id="Легализация денегНет" name="Легализация денег" value="Нет">
+        <label for="Легализация денегНет"><span></span>Нет</label>
+      </div>
+    </div>
+    <div>
+      Как зовут Раввина города, в котором вы жили до начала войны?
+      <input class="form__input" type="text" name="Раввин города" maxlength="25" required>
+    </div>
+    <div>
+      Посещали ли вы/ваши дети еврейские программы в своем городе? Если да, то от отметьте какие.
+      <div class="div" style="margin: 15px 0;">
+        <input type="checkbox" id="Синагога" name="Синагога" value="+">
+        <label for="Синагога"><span></span>Синагога по праздникам</label>
+        <br>
+        <input type="checkbox" id="Шаббат" name="Шаббат" value="+">
+        <label for="Шаббат"><span></span>Шаббат</label>
+        <br>
+        <input type="checkbox" id="Миньян" name="Миньян" value="+">
+        <label for="Миньян"><span></span>Миньян</label>
+        <br>
+        <input type="checkbox" id="STL" name="STL" value="+">
+        <label for="STL"><span></span>STL</label>
+        <br>
+        <input type="checkbox" id="Колель" name="Колель" value="+">
+        <label for="Колель"><span></span>Колель Тора</label>
+        <br>
+        <input type="checkbox" id="Enerjew" name="Enerjew" value="+">
+        <label for="Enerjew"><span></span>Enerjew</label>
+        <br>
+        <input type="checkbox" id="JSmart" name="JSmart" value="+">
+        <label for="JSmart"><span></span>JSmart</label>
+        <br>
+        <input type="checkbox" id="Хесед" name="Хесед" value="+">
+        <label for="Хесед"><span></span>Хесед</label>
+        <br>
+        <input type="checkbox" id="Сохнут" name="Сохнут" value="+">
+        <label for="Сохнут"><span></span>Сохнут</label>
+        <br>
+        <input type="checkbox" id="Джоинт" name="Джоинт" value="+">
+        <label for="Джоинт"><span></span>Джоинт</label>
+        <br>
+        <input type="checkbox" id="Шатры" name="Шатры" value="+">
+        <label for="Шатры"><span></span>Шатры Авраама</label>
+        <br>
+        <input type="checkbox" id="Тикун" name="Тикун" value="+">
+        <label for="Тикун"><span></span>Тикун Олам</label>
+        <br>
+        <input type="checkbox" id="STARS" name="STARS" value="+">
+        <label for="STARS"><span></span>STARS</label>
+        <br>
+        <input type="checkbox" id="интенсив" name="STARS интенсив" value="+">
+        <label for="интенсив"><span></span>STARS интенсив</label>
+        <br>
+        <input type="checkbox" id="LIT" name="LIT" value="+">
+        <label for="LIT"><span></span>LIT</label>
+        <br>
+        <input type="checkbox" id="Бейт" name="Бейт" value="+">
+        <label for="Бейт"><span></span>Бейт Хана</label>
+        <br>
+        <input type="checkbox" id="Дом" name="Дом для пожилых" value="+">
+        <label for="Дом"><span></span>Дом для пожилых людей</label>
+        <br>
+        <input type="checkbox" id="школа" name="школа" value="+">
+        <label for="школа"><span></span>Еврейская школа</label>
+        <br>
+        <input type="checkbox" id="садик" name="садик" value="+">
+        <label for="садик"><span></span>Еврейский садик</label>
+        <br>
+        <input type="checkbox" id="Ешива" name="Ешива" value="+">
+        <label for="Ешива"><span></span>Ешива</label>
+        <br>
+        <input type="checkbox" id="Махон" name="Махон" value="+">
+        <label for="Махон"><span></span>Махон</label>
+        <br>
+        <input type="checkbox" id="Не" name="Не посещали" value="+">
+        <label for="Не"><span></span>Не посещали программы</label>
+        <br>
+        <input type="checkbox" id="Другое" name="Другое" value="+">
+        <label for="Другое"><span></span>Другое</label>
+      </div>
+    </div>
+    <div>
+      Даю согласие на обработку моих персональных данных
+      <input type="checkbox" id="Согласие" name="Согласие" value="+" checked>
+      <label for="Согласие"><span style="display:block; margin: 15px 0"></span></label>
+
+    </div>
+    <button class="button" type="submit">
+      <div class="button__text">Отправить</div>
+      <div class="button__effect">
+        <div class="button__effect_2"></div>
+      </div>
+    </button>
+  </form>
+</body>
+
+
+<footer>
+  <img class="footer__img" src="./img/logo.png"></img>
+  <div class="footer__rights">
+    &#169; All rights reserved
+  </div>
+
+  <div class="footer__links">
+    <a href="https://www.facebook.com/" target="_blank" class="footer__social">
+      <i class='bx bxl-facebook' style="color: black; width: 24px"></i>
+    </a>
+    <a href="https://www.instagram.com/" target="_blank" class="footer__social">
+      <i class='bx bxl-instagram' style="color: black; width: 24px"></i>
+    </a>
+  </div>
+</footer>
+
+<script src="js/intlTelInput.min.js"></script>
+<script>
+  var input = document.querySelector("#phone");
+  window.intlTelInput(input, {
+    initialCountry: 'il',
+    utilsScript: "js/utils.js",
+  });
+  var inputwa = document.querySelector("#phonewa");
+  window.intlTelInput(inputwa, {
+    initialCountry: "ua",
+    utilsScript: "js/utils.js",
+  });
+  var inputtg = document.querySelector("#phonetg");
+  window.intlTelInput(inputtg, {
+    initialCountry: "ua",
+    utilsScript: "js/utils.js",
+  });
+
+  let card = document.querySelectorAll(".iti__selected-flag");
+
+  function myFunction() {
+    let tel = card[0].title;
+    let telwa = card[1].title;
+    let teltg = card[2].title;
+    let telnum = document.getElementById("phone").value;
+    let telwanum = document.getElementById("phonewa").value;
+    let teltgnum = document.getElementById("phonetg").value;
+    document.getElementById("phone+").value = tel + telnum;
+    document.getElementById("phonewa+").value = telwa + telwanum;
+    document.getElementById("phonetg+").value = teltg + teltgnum;
+  };
+</script>
+
+</html>
